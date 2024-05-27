@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Home extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-        private JButton b1,b2,b3,b4,b5,b6;
+        private JButton b1,b2,b3,b4,b5;
 
 	public static void main(String[] args) {
             new Home().setVisible(true);
@@ -36,9 +36,6 @@ public class Home extends JFrame implements ActionListener{
             mntmLogout.setForeground(Color.red);
             mntmLogout.addActionListener(this);
             mnExit.add(mntmLogout); 
-
-            JMenu mnHelp = new JMenu("Help");
-            mnHelp.setFont(new Font("Trebuchet MS", Font.BOLD, 17));
 
             JMenu mnRecord = new JMenu("Record");
             mnRecord.setFont(new Font("Trebuchet MS", Font.BOLD, 17));
@@ -166,16 +163,10 @@ public class Home extends JFrame implements ActionListener{
             if(msg.equals("Logout")){
                 setVisible(false);
 		new Login_user().setVisible(true);
-            }else if(msg.equals("Exit")){
-                System.exit(ABORT);
             
-            }else if(msg.equals("Read Me")){
-            
-            }else if(msg.equals("About Us")){
-                setVisible(false);
-		//new aboutUs().setVisible(true);
-            
-            }else if(msg.equals("Book Details")){
+            }
+
+            else if(msg.equals("Book Details")){
                 setVisible(false);
 		new BookDetails().setVisible(true);
             }else if(msg.equals("Student Details")){
@@ -203,10 +194,6 @@ public class Home extends JFrame implements ActionListener{
             if(ae.getSource() == b5){
                 this.setVisible(false);
                 new ReturnBook().setVisible(true);
-            
-            }
-            if(ae.getSource() == b6){
-                this.setVisible(false);
             
             }
             
